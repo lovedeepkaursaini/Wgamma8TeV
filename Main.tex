@@ -1,0 +1,76 @@
+%
+% A simple LaTeX template for Books
+%  (c) Aleksander Morgado <aleksander@es.gnu.org>
+%  Released into public domain
+%
+\RequirePackage{lineno} 
+\documentclass{article}
+\usepackage[a4paper, top=3cm, bottom=3cm]{geometry}
+%\usepackage[latin1]{inputenc}
+%\usepackage{setspace}
+\usepackage{fancyhdr}
+%\usepackage{tocloft}
+\usepackage{verbatim}
+\usepackage{graphicx,amsmath,epsfig,color,amsfonts,relsize,subfigure}
+\usepackage{authblk}
+%\usepackage[running]{lineno}
+\newcommand{\fbinv} {\mbox{\ensuremath{\,\text{fb}^\text{$-$1}}}}
+\begin{document}
+
+ 
+\pagestyle{empty}
+\pagenumbering{}
+% Set book title
+\title{\textbf{W$\gamma$ at $\sqrt{s}=$8~TeV.}}
+
+\author[1]{Lovedeep}
+\author[1]{Yurii}
+\author[1]{Sachiko}
+\author[2]{Katya}
+\author[2]{Ilya}
+\author[3]{Yutaro}
+
+\affil[1]{Kansas State University, Manhattan}
+\affil[2]{University of Nebraska-Lincoln, USA}
+\affil[3]{Carnegie Melon University, USA}
+\maketitle
+
+\begin{abstract}
+We present a study of W$\gamma$ production in proton-proton
+collisions at $\sqrt{s} = 8$~TeV. 
+\end{abstract}
+
+% 2nd page, thanks message
+%-------------------------------------------------------------------------------
+\thispagestyle{empty}
+\newpage
+
+
+% General definitions for all Chapters
+%-------------------------------------------------------------------------------
+
+% Define Page style for all chapters
+\pagestyle{fancy}
+% Delete the current section for header and footer
+\fancyhf{}
+% Set custom header
+\lhead[]{\thepage}
+\rhead[\thepage]{}
+
+% Set arabic (1,2,3...) page numbering
+\pagenumbering{arabic}
+\tableofcontents
+
+%
+% Not enumerated chapter
+%-------------------------------------------------------------------------------
+\linenumbers
+\clearpage
+\input{Introduction}
+\input{Samples}
+\input{ObjectID}
+\clearpage
+
+
+
+\end{document}

@@ -1,0 +1,95 @@
+\section{Data and Monte Carlo samples}
+\label{sec:DataAndMC}
+
+\subsection{Data sample}
+The data sample we use in this analysis was recorded by the CMS experiment 
+in 2012. The data is collected by single electron ($p_T>27$GeV) triggers~\ref{tab:triggers}. 
+Only certified runs and luminosity sections are considered, which 
+means that good functioning of all CMS sub-detectors is required.
+The selection of the validated run and luminosity sections are obtained from the following official JSON file:
+\begin{itemize}
+\item{\small{Cert$\_$190456$-$208686$\_$8TeV$\_$22Jan2013ReReco$\_$Collisions12$\_$JSON.txt}}
+\end{itemize}
+ The total 
+statistics analyzed correspond to an integrated luminosity of 19.6~\fbinv.
+
+\begin{table}[htbp]
+  \begin{center}
+ {\small
+  \begin{tabular} {l|l|c}
+\hline
+  Dataset & Trigger name & Description\\
+  \hline \hline
+  SingleElectron & HLT\_Ele27\_WP80*        & $p_T>27~GeV$ \\
+  \hline
+  \end{tabular}
+}
+  \caption{Analysis triggers for data sample.\label{tab:triggers}}
+  \end{center}
+\end{table}
+
+The dataset used for the analysis and the corresponding run ranges are 
+listed in Table~\ref{tab:datasets}. All samples have been processed using a 
+\texttt{CMSSW\_5\_3\_2} release version.
+
+\begin{table}[]
+  \begin{center}
+  \begin{tabular}{r|r}
+  \hline
+  Dataset name & Run range \\
+  \hline
+  /SingleElectron/Run2012A-22Jan2013-v1/AOD   &  190456-193621           \\
+  \hline
+  /SingleElectron/Run2012B-22Jan2013-v1/AOD   &   193833-196531       \\
+  \hline
+  /SingleElectron/Run2012C-22Jan2013-v1/AOD & 198022-203746\\
+  \hline
+  /SingleElectron/Run2012D-22Jan2013-v1/AOD  & 203777-208686 \\
+  
+  \hline
+  \hline
+  \end{tabular}
+  \end{center}
+  \caption{Summary of data samples used and run ranges of applicability.}
+  \label{tab:datasets}
+\end{table}%
+\subsection{Monte Carlo samples}
+
+All MC samples considered in this analysis come from the official
+``Summer12\_53X''.  Events from all samples were
+reconstructed making use of a \texttt{CMSSW\_5\_3\_X} release version.
+The simulated samples are reweighted to represent the distribution of the
+number of pp interactions per bunch crossing (pile-up), as measured in
+the data.
+
+
+
+Information on Monte Carlo samples used for the analyses is given in 
+Table~\ref{tab:mc_bkg_samples} 
+for signals and backgrounds. 
+The corresponding leading order (LO) and next-to-leading order (NLO) 
+cross sections are also listed in this Table.
+
+
+
+\begin{table}[h]
+  \scriptsize
+  \begin{center}
+    \caption{Summary of Monte Carlo background samples used.}
+    \begin{tabular}{|l|l|l|}
+      \hline
+      Process (Fall11)                     & $\sigma$, pb        & Dataset Name (AODSIM data tier) \\ \hline
+      $W\gamma \rightarrow l\nu\gamma$     & 553.92 (NLO)         & \verb /WGToLNuG_TuneZ2star_8TeV-madgraph-tauola \\
+      $W \rightarrow l\nu + jets$          & 36257.2 (NNLO)        & \verb /WJetsToLNu_TuneZ2Star_8TeV-madgraph-tarball \\ 
+      $Z \rightarrow ll + jets$            & 3503.71         & \verb /DYJetsToLL_M-50_TuneZ2Star_8TeV-madgraph-tarball \\
+      $t\bar{t} + jets+1l$                    & 99.44 (NNLO)          & \verb /TTJets_SemiLeptMGDecays_8TeV-madgraph  \\
+      $t\bar{t} + jets+2l$                    & 23.83           & \verb /TTJets_FullLeptMGDecays_8TeV-madgraph \\
+      $t\bar{t} + \gamma$                    & 1.444           & \verb /TTGJets_8TeV-madgraph \\
+      $Z\gamma \rightarrow ee\gamma$       & 159.120          & \verb /ZGToLLG_8TeV-madgraph \\
+      \hline
+    \end{tabular}
+    \label{tab:mc_bkg_samples}
+  \end{center}
+\end{table} 
+
+
