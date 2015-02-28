@@ -1,0 +1,21 @@
+\section{Cross Section}
+\label{sec:CrossSection}
+\subsection {Theoretical Cross Section}
+The theoretical cross section was computed with MCFN [REFERENCE] in NLO and is for the dedicated signal MC sample $\sigma(sample)$=553.92 pb. The MC sample was generated with MADGRAPH [REFERENCE] and the cross section in our selected phase space was computed as $\sigma(phase space) = \sigma(sample) \cdot N_{phase space} / N_{sample}$ where  $N_{phase space}$ and $N_{sample}$ are numbers of events falling into selected phase space and generated in the whole MC sample respectively. For the differential cross section, $N_{phase space}$ is number of events falling into specific pt bin and to compute $d\sigma / dP_T^{\gamma}$, we divide over the bin width.
+\subsection {Cross Section Measurement}
+The cross section calculation is performed with the following analysis flow
+\begin{itemize}
+  \item cut-based  event selection
+  \item $jets \rightarrow \gamma$ data driven background subtraction
+  \item $e \rightarrow \gamma $ and true $\gamma$ MC-based background subtraction
+  \item TODO: perform data-driven $e \rightarrow \gamma$ background estimation for electron channel or prove that effect is small
+  \item TODO: show that true photon + fake lepton background is neglibgible (just on MC)
+  \item detector resolution unfolding correction (for differential cross section only)
+  \item acceptance x efficiency correction (bin-by-bin)
+  \item data/MC electron and photon scale factors correction 
+  \item TODO: apply muon scale factors and photon scale factors for muon channel
+  \item TODO: if other syst errors are not very high, compute and apply WMt scale factor
+  \item divide over luminocity (19.5 $fb^{-1}$)
+  \item divide over bin width (for differential cross section only)
+  \item estimate systematic errors
+\end{itemize}

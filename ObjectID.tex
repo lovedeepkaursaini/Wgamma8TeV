@@ -1,14 +1,14 @@
 \section{Object selection}
 \label{sec:ObjectSelection}
-In this Section we document the electron, 
+In this Section we document the electron, muon,
 and photon identification and isolation criteria, MET criteria, and provide the
 results of comparing Monte Carlo simulation with data.
-
+We use cut-based selection of lepton + photon + MET where lepton is either muon or electron. Photon and MET selection are a little bit different for different channels. The second lepton veto is applied.  dR(lep,pho)$>$0.7 where $dR=\sqrt{({d\phi}^2+{d\eta}^2)}$ is applied to avoid divergence of ISR and FSR contributions. No restrictions applied on number of photons in the event but the candidate with the hardest photon is selected in particular event among those photon which passed all the other cuts including dR. dR is also part of phase space selection.
 
 \subsection{Electron selection}
 \label{sec:eid}
 In $W\gamma$ analysis we consider electrons with $p_T > 30$~GeV and passing
-the Medium-identification and isolation optimized by EGamma-POG for 2012 analyses.
+the Medium-identification and isolation optimized by EGamma-POG for 2012 analyses [REFERENCE].
 We summarize electron identification and isolation requirements in Table~\ref{}.
 
 The ECAL fiducial region is defined in terms of barrel and endcap
@@ -18,15 +18,40 @@ to be within this ECAL acceptance if its associated SuperCluster (SC) is
 within the ECAL acceptance.
 Data/MC scale factors are applied.
 
-
 \subsection{Photon selection}
 Photon candidates are reconstructed as SuperClusters with 
 $E_{T} > 15$~GeV in the fiducial volume of the ECAL detector:
 barrel (EB) with $|\eta|<1.4442$ and endcap (EE) with 
 $1.566 < |\eta| < 2.5$. To reduce copious background objects from jets misidentified as photons 
-we apply the Medium identification and isolation selections as recommended by EGamma-POG.
+we apply the Medium identification and isolation selections as recommended by EGamma-POG [REFERENCE].
 Data/MC scale factors are applied.
 
+\subsection{Muon selection}
+The muon selection includes the kinematics cuts $P_T>26$ GeV and $|\eta|<2.1$ and the muon ID cut recommended by POG [REFERENCE]. If there is the second reconstructed muon candidate with $P_T>10$ GeV and $|\eta|<2.4$ is found in the event, then the whole event is vetoed. No muon ID requirements on the muon to be vetoed are applied.  
+
 \subsection{MET}
-no selection yet
+W transverse mass cut is applied. $M_T>50$ GeV for muon channel and $M_T>70$ GeV for electron channel where $M_T=\sqrt{(2 \cdot P_T^{Lep} \cdot P_T^{MET} \cdot (1-\cos{(\phi^{lep}-\phi^{MET})}))}$. MET (missing transverse enery) reconstructed with particle flow algorithm was used [REFERENCE]. 
+TODO: write something about MET corrections and MET smearing
+
+\subsection{Pile Up reweighting}
+applied
+
+\subsection{Blinding}
+This is a policy of SMP group that all the analyses must be performed in a blinded way. We discussed how to implement blinding in our case with the statistics committee [REFERENCE] and were given the following recipe:\\*
+"We believe we have cooked up a possible procedure to blind your data in a way which prevents you from biasing your results (as the SMP-VV group wants) while not making it appreciably harder for you to analyze the data. \\*
+The idea is to produce a filter which removes at random a certain fraction of your data with pt(photon) above some threshold, such that the region where you are sensitive to new physics (say above 40 GeV) is artificially decreased with respect to background predictions. This allows you access to high-pT data while preventing you to be influenced by good or bad agreement in that region.\\*
+In addition, you should make a second dataset containing just a flat X\% of the data, irrespective of photon pT. This second dataset allows you to verify that your modeling is correct, while leaving room for surprises. X should be chosen such that the resulting statistical uncertainty in the signal-sensitive region is at least three times as large as the systematic uncertainty; and in any case it should not exceed 10\%.\\*
+In practice this means: \\*
+1) decide a pTg threshold above which there starts to be sensitivity to new physics effects. We probably want this to be safe, so maybe $P_T^{\gamma}>$40 GeV could be the right ballpark;\\*
+2) have somebody decide decreasing "acceptance factors" S($P_T^{\gamma}>$) for the bins above threshold, unknown to you. In the graph I see three bins above 40, so they could be: in the region 40-60 and 60-80 GeV something around 0.8; in the region 80-200 GeV something around 0.6; in the region above 200 GeV something around 0.4.\\*
+3) the same person should produce data ntuples only containing data passing the requirement gRandom$\rightarrow$Uniform()<S($P_T^{\gamma}$), and pass them to you for the analysis. For the Monte Carlo simulations, no such random removal is to be applied.\\*
+4) The same person could produce data ntuples containing a flat X\% of all data, using the same random procedure (such that you do not get, e.g., only data from the first part of the run). This factor X need not be hidden from you, as you will want to try and match your MC prediction to the data to see that things are in good order.\\*
+5) You can then do the analysis using the two reduced samples, checking high-pt data as well as verifying the agreement at the high-pt end with the X\% of the sample.\\*
+6) Unblinding just means removing the filter and doing the full analysis on the whole data.\\*
+Note that as you get rescaled data but the MC is not rescaled, you cannot make any inference from the (dis)-agreement of high-ptg data. You still can, however, check other distributions (like muon pt or eta or whatever) by doing separate graphs for the separate ptg bins, and suitably renormalizing them." [Tommaso Dorigo for the Statistics Commitee]\\*
+We decided on $P_T$ threshold of 40 GeV and, relying on systematic error of ~10\%, quoted by 7 TeV measurement [REFERENCE], on X\%=5\%. Thus, for blinding we are using either 5\% of data or are just looking at data with $P_T<40$ GeV
+
+\subsection{Vjets/$V\gamma$ overlap removal}
+To prepare plots data vs MC, the overlap removal between inclusive and exclusive samples was done. 
+[TODO: add the explanation here or to appendix? Explain studies?]
 
